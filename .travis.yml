@@ -12,7 +12,7 @@ deploy:
   secret_access_key:
     secure: nfEpNnYDsA4xj1ycP159gkZ5JCj+Zl+ZaejYik6vYAfaAy4f370XccDtfh8Du/J7yElp50EG5X+qiDVhhtjKvBFKUYVgJmMOSzJ9baB2z+pI8vGaaV5ToBor8R1YtBHznPd41jY8Ahgvw2Rr/4gdLy2zq92fFW4pQdNXB/xyBz4=
   bucket: 'jhdm-com'
-  endpoint: s3-eu-central-1.amazonaws.com
+  endpoint: jhdm-com.s3-eu-central-1.amazonaws.com
   acl: public_read_write
   on:
     repo: johanhdm/johanhdm.com
