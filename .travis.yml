@@ -4,7 +4,7 @@ node_js:
 before_script:
   - cd Static
   -  npm install
-script: 
+script:
   - gulp build
 deploy:
   provider: s3
@@ -12,7 +12,7 @@ deploy:
   secret_access_key:
     secure: nfEpNnYDsA4xj1ycP159gkZ5JCj+Zl+ZaejYik6vYAfaAy4f370XccDtfh8Du/J7yElp50EG5X+qiDVhhtjKvBFKUYVgJmMOSzJ9baB2z+pI8vGaaV5ToBor8R1YtBHznPd41jY8Ahgvw2Rr/4gdLy2zq92fFW4pQdNXB/xyBz4=
   bucket: jhdm-com
-  local-dir: Static/Dist
+  local-dir: Dist
   acl: public_read_write
   on:
     repo: johanhdm/johanhdm.com
