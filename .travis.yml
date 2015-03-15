@@ -8,6 +8,7 @@ script:
   - gulp build
   - ls
   - cd ..
+  - ls
 deploy:
   provider: s3
   access_key_id: AKIAI2PMWXFL7WU5254A
@@ -17,7 +18,7 @@ deploy:
   endpoint: jhdm-com.s3-website.eu-central-1.amazonaws.com
   region: eu-central-1
   skip_cleanup: false
-  local_dir: /Static/Dist/
+  local_dir: Static/Dist/
   acl: public_read
   on:
     repo: johanhdm/johanhdm.com
