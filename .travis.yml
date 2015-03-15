@@ -3,9 +3,13 @@ node_js:
 - '0.10'
 before_script:
   - cd Static
-  -  npm install
+  - npm install
 script:
   - gulp build
+after_script:
+  - ls
+  - cd ..
+
 deploy:
   provider: s3
   access_key_id: AKIAI2PMWXFL7WU5254A
@@ -15,7 +19,7 @@ deploy:
   endpoint: jhdm-com.s3-website.eu-central-1.amazonaws.com
   region: eu-central-1
   skip_cleanup: false
-  local_dir: Dist
+  local_dir: /Static/Dist/
   acl: public_read
   on:
     repo: johanhdm/johanhdm.com
