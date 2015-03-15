@@ -6,9 +6,7 @@ before_script:
   - npm install
 script:
   - gulp build
-  - ls
   - cd ..
-  - ls
 deploy:
   provider: s3
   access_key_id: AKIAI2PMWXFL7WU5254A
