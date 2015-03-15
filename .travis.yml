@@ -17,7 +17,7 @@ deploy:
   bucket: 'jhdm-com'
   endpoint: jhdm-com.s3-website.eu-central-1.amazonaws.com
   region: eu-central-1
-  skip_cleanup: false
+  skip_cleanup: true
   local_dir: Static/Dist
   acl: public_read
   on:
