@@ -1,0 +1,12 @@
+{{> header}}
+<main role="main">
+  <article class="case">
+    
+    <header>
+      <h1>{{{title}}}</h1>
+    </header>
+      {{{intro}}}
+      {{{contents}}}
+  </article>
+</main>
+{{> footer}}

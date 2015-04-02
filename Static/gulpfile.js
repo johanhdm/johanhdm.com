@@ -10,8 +10,14 @@ var gulp = require('gulp')
     , serve = require('gulp-serve')
     , jshint = require('gulp-jshint')
     , jscs = require('gulp-jscs')
-    , plumber = require('gulp-plumber');
-
+    , plumber = require('gulp-plumber')
+    , frontMatter = require('gulp-front-matter')
+    , gulpsmith = require('gulpsmith')
+    , permalinks = require('metalsmith-permalinks')
+    , markdown = require('metalsmith-markdown')
+    , templates = require('metalsmith-templates')
+    , collections = require('metalsmith-collections')
+    , assign = require('lodash.assign');
 
 gulp.task('serve', serve('Dist'));
 
@@ -33,6 +39,7 @@ var config = {
         "fonts" : [base + "/Source/fonts/**/*.*"],
         "html" : [base + "/Source/**/*.html"],
         "allHtml" : [base + "/Source/**/*.html"],
+        "allMD" :  [base + "/Source/content/**/*.md"],
         "misc" : [base + "/Source/*.png", base + "/Source/robots.txt", base + "/Source/*.ico", base + "/Source/*.xml"]
     },
     "dest" : {
@@ -52,6 +59,46 @@ gulp.task('sass', function () {
         .pipe(plumber())
         .pipe(sass({ sourcemap: true }))
         .pipe(gulp.dest(config.dest.css));
+});
+
+gulp.task('forge', function(){
+  gulp.src(config.src.allMD)
+      .pipe(frontMatter()).on("data", function(file) {
+        assign(file, file.frontMatter);
+        delete file.frontMatter;
+      })
+      .pipe(
+        gulpsmith()
+          .metadata({ site_name: "JohanHdM" })
+          .use(collections({
+              pages: {
+                  pattern: 'content/pages/*.md'
+              },
+              posts: {
+                  pattern: 'content/posts/*.md',
+                  sortBy: 'date',
+                  reverse: true
+              },
+              work: {
+                  pattern: 'content/work/*.md',
+                  sortBy: 'date',
+                  reverse: true
+              }
+
+          }))
+          .use(markdown())
+          .use(templates({
+                "engine" : "handlebars",
+                "directory" : "Source/templates",
+                "partials": {
+                    "header": "partials/header",
+                    "footer": "partials/footer"
+
+                }
+              }))
+//          .use(permalinks(':collection/:title'))
+      )
+      .pipe(gulp.dest(config.dest.html));
 });
 
 gulp.task('compile-html', function(){
@@ -112,7 +159,7 @@ gulp.task('clean', function(callback){
   del(config.dest.root, callback)
 });
 
-gulp.task('build', ['sass', 'minify-css','compile-html', 'copy-images', 'copy-fonts', 'copy-misc', 'js'], function () { });
+gulp.task('build', ['forge', 'sass', 'minify-css','compile-html', 'copy-images', 'copy-fonts', 'copy-misc', 'js'], function () { });
 
 
 gulp.task('server', function(){
@@ -131,6 +178,7 @@ gulp.task('watch', function () {
     gulp.watch(config.src.allHtml, ['compile-html']);
     gulp.watch(config.src.allSass, ['sass', 'minify-css']);
     gulp.watch(config.src.allJs, ['js']);
+    gulp.watch(config.src.allMD, ['forge']);
     gulp.watch(config.src.images, ['copy-images']);
     gulp.watch(config.src.fonts, ['copy-fonts']);
 

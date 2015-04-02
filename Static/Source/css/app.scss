@@ -1,6 +1,68 @@
 
 @import "bootstrap";
 
-@import "includes/carousel";
-//@import "includes/mixins";
+$width: 400px;
+
+//@import "includes/carousel";
+@import "includes/mixins";
 //@import "includes/variables";
+
+html{
+
+}
+
+body{
+  background-color: #fff;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 25px;
+  font-family: 'AvenirBook'
+
+}
+
+main{
+  width: $width;
+  margin: 150px auto 0 auto;
+
+
+}
+
+header{
+  border-bottom: solid 5px #000;
+  margin-bottom: 30px;
+}
+
+h1{
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 30px;
+  line-height: 25px;
+  font-family: 'AvenirBookOblique';
+  margin: 25px 0;
+}
+
+nav{
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  
+  > a{
+    > span, span:before, span:after{
+      cursor: pointer;
+      border-radius: 1px;
+      height: 5px;
+      width: 35px;
+      background: #000;
+      position: absolute;
+      display: block;
+      content: '';
+
+      &:before {
+        top: -10px;
+      }
+      &:after {
+        bottom: -10px;
+      }
+    }
+  }
+}
