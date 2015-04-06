@@ -2,7 +2,7 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en-US"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="en-US"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang="en-US"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en-US"> <!--<![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en-US" > <!--<![endif]-->
   <head>
 
     <meta charset="utf-8">
@@ -12,9 +12,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="/images/favicons/apple-touch-icon.png">
     <link rel="stylesheet" href="/css/app.min.css">
+    <link rel="stylesheet" media="print" href="/css/print.css">
+
 
   </head>
-  <body>
-    <nav>
-      <a href="#"><span></span></a>
+  <body ng-app="JohanHdM" ng-controller="MainController" ng-class="{ 'menuOpen' : menuOpen }">
+    <nav id="nav" >
+      <div class="menu"  >
+        <ul class="nav navbar-nav">
+          <li>
+            <a href="item">ITEM</a>
+          </li>
+          <li>
+            <a href="item">ITEM</a>
+          </li>
+          <li>
+            <a href="item">ITEM</a>
+          </li>
+          <li>
+            <a href="item">ITEM</a>
+          </li>
+        </ul>
+      </div>
+      <div class="button" ng-click="toggleMenu()">
+      </div>
+      <a href="#" ng-click="toggleMenu()"><span></span></a>
     </nav>

@@ -5,7 +5,6 @@ var gulp = require('gulp')
     , base64 = require('gulp-base64')
     , concat = require('gulp-concat')
     , uglify = require('gulp-uglify')
-    , fileinclude = require('gulp-file-include')
     , del = require('del')
     , serve = require('gulp-serve')
     , jshint = require('gulp-jshint')
@@ -26,7 +25,7 @@ var base = ".";
 //Paths configuration
 var config = {
     "src": {
-        "sass": [base + "/Source/css/app.scss"],
+        "sass": [base + "/Source/css/app.scss", base + "/Source/css/print.scss"],
         "allSass": [base + "/Source/css/**/*.scss"],
         "js": [base + "/Source/js/lib/jquery-1.11.2/*.js",
               base + "/Source/js/lib/bootstrap-3.3.2/*.js",
@@ -38,7 +37,7 @@ var config = {
         "images" : [ base + "/Source/images/**/*.*" ],
         "fonts" : [base + "/Source/fonts/**/*.*"],
         "html" : [base + "/Source/**/*.html"],
-        "allHtml" : [base + "/Source/**/*.html"],
+        "allHtml" : [base + "/Source/**/*.html", base + "/Source/**/*.hbt", ],
         "allMD" :  [base + "/Source/content/**/*.md"],
         "misc" : [base + "/Source/*.png", base + "/Source/robots.txt", base + "/Source/*.ico", base + "/Source/*.xml"]
     },
@@ -74,6 +73,9 @@ gulp.task('forge', function(){
               pages: {
                   pattern: 'content/pages/*.md'
               },
+              resume: {
+                  pattern: 'content/resume/*.md'
+              },
               posts: {
                   pattern: 'content/posts/*.md',
                   sortBy: 'date',
@@ -99,16 +101,6 @@ gulp.task('forge', function(){
 //          .use(permalinks(':collection/:title'))
       )
       .pipe(gulp.dest(config.dest.html));
-});
-
-gulp.task('compile-html', function(){
-  return gulp.src(config.src.html)
-    .pipe(plumber())
-    .pipe(fileinclude({
-      prefix : '@@',
-      basepath: '@file'
-    }))
-    .pipe(gulp.dest(config.dest.html));
 });
 
 gulp.task('js', ['copy-js'], function () {
@@ -159,7 +151,7 @@ gulp.task('clean', function(callback){
   del(config.dest.root, callback)
 });
 
-gulp.task('build', ['forge', 'sass', 'minify-css','compile-html', 'copy-images', 'copy-fonts', 'copy-misc', 'js'], function () { });
+gulp.task('build', ['forge', 'sass', 'minify-css', 'copy-images', 'copy-fonts', 'copy-misc', 'js'], function () { });
 
 
 gulp.task('server', function(){
@@ -175,9 +167,9 @@ gulp.task('server', function(){
 });
 
 gulp.task('watch', function () {
-    gulp.watch(config.src.allHtml, ['compile-html']);
+    gulp.watch(config.src.allHtml, ['forge']);
     gulp.watch(config.src.allSass, ['sass', 'minify-css']);
-    gulp.watch(config.src.allJs, ['js']);
+    gulp.watch(config.src.allJS, ['js']);
     gulp.watch(config.src.allMD, ['forge']);
     gulp.watch(config.src.images, ['copy-images']);
     gulp.watch(config.src.fonts, ['copy-fonts']);
