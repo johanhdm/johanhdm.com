@@ -21,16 +21,19 @@
       <div class="menu"  >
         <ul class="nav navbar-nav">
           <li>
-            <a href="item">ITEM</a>
+            <a href="item">HOME</a>
           </li>
           <li>
-            <a href="item">ITEM</a>
+            <a href="item">WORK</a>
           </li>
           <li>
-            <a href="item">ITEM</a>
+            <a href="item">RESUME</a>
           </li>
           <li>
-            <a href="item">ITEM</a>
+            <a href="item">BLOG</a>
+          </li>
+          <li>
+            <a href="item">ABOUT ME</a>
           </li>
         </ul>
       </div>

@@ -2,13 +2,14 @@
 @import "bootstrap";
 
 $width: 520px;
+$menu-height: 160px;
 
 //@import "includes/carousel";
 @import "includes/mixins";
 //@import "includes/variables";
 
 html{
-
+  -webkit-font-smoothing: subpixel-antialiased;
 }
 
 body{
@@ -18,10 +19,11 @@ body{
   line-height: 25px;
   font-family: 'AvenirBook';
 
+
   &.menuOpen{
 
     > main{
-      @include translate(0,295px);
+      @include translate(0,$menu-height);
       @include transition('all .3s');
 
     }
@@ -33,17 +35,15 @@ body{
   }
 }
 
-main{
+.container{
   max-width: $width;
   margin: 40px auto 0 auto;
 
   @include translate(0,0);
   @include transition('all 2s');
 
-  &.container{
-    padding: 0;
+  padding: 0;
 
-  }
 
 }
 
@@ -61,6 +61,21 @@ article{
 
   }
 
+  a{
+    color:#000;
+    background-color: #fff;
+    border: solid 3px #000;
+    padding: 6px 25px;
+    @include transition('background-color 3s');
+    text-decoration: none;
+
+    &:hover{
+      color:#fff;
+      background-color: #000;
+      @include transition('all 3s');
+    }
+  }
+
   header{
     h3{
       margin: 25px 0 -10px;
@@ -74,6 +89,21 @@ article{
 header{
   border-bottom: solid 3px #000;
   margin-bottom: 30px;
+}
+
+footer{
+
+  float:left;
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+  min-height: 200px;
+  article{
+    margin-bottom: 0;
+    header{
+      border-bottom: solid 3px #fff;
+    }
+  }
 }
 
 h1{
@@ -117,7 +147,7 @@ nav{
   top: 0px;
   width:100%;
   transform-origin: 0px 0px 0px;
-  @include translate(0,-295px);
+  @include translate(0,-$menu-height);
   transition: all .3s;
 
 
@@ -125,10 +155,27 @@ nav{
   .menu{
     background-color:#000;
     display:block;
-    height:300px;
+    height: $menu-height - 15px;
+    position: relative;
+    z-index: 1;
+    padding: 20px 0 0;
 
     > ul{
-      margin: 0;
+      max-width:400px;
+      margin: auto;
+      text-align: center;
+      list-style-type: none;
+      padding: 0;
+      font-size: 29px;
+
+      li{
+        a{
+          background-color: #FFF;
+          color: #000;
+          text-decoration: none;
+        }
+      }
+
     }
   }
 

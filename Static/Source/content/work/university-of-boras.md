@@ -1,5 +1,6 @@
 ---
-title: 'University of Borås: Web site'
+title: 'Lorem ipsum 2: Web site'
+subtitle: 'Case'
 template: page.hbt
 intro: The old site was quickly dying the painful death often seen where sites suffer from a chronic case of IBM WebSphere. The end was near.
 ---

@@ -1,11 +1,21 @@
 {{> header}}
-<main role="main">
+<main role="main" class="container">
   <article>
     <header>
       <h1>{{{title}}}</h1>
     </header>
-      {{{intro}}}  
+      <p>{{{intro}}}</p>
       {{{contents}}}
   </article>
+  {{#each collections.all}}
+  <article>
+    <header>
+      <h3>{{{this.subtitle}}}</h3>
+      <h1>{{{this.title}}}</h1>
+    </header>
+    <p>{{{this.intro}}}</p>
+    <p><a href="#">Read more</a></p>
+  </article>
+  {{/each}}
 </main>
 {{> footer}}

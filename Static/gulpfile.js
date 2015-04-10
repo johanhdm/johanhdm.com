@@ -38,7 +38,7 @@ var config = {
         "fonts" : [base + "/Source/fonts/**/*.*"],
         "html" : [base + "/Source/**/*.html"],
         "allHtml" : [base + "/Source/**/*.html", base + "/Source/**/*.hbt", ],
-        "allMD" :  [base + "/Source/content/**/*.md"],
+        "allMD" :  [base + "/Source/content/**/*"],
         "misc" : [base + "/Source/*.png", base + "/Source/robots.txt", base + "/Source/*.ico", base + "/Source/*.xml"]
     },
     "dest" : {
@@ -70,7 +70,7 @@ gulp.task('forge', function(){
         gulpsmith()
           .metadata({ site_name: "JohanHdM" })
           .use(collections({
-              pages: {
+            /*  pages: {
                   pattern: 'content/pages/*.md'
               },
               resume: {
@@ -82,10 +82,13 @@ gulp.task('forge', function(){
                   reverse: true
               },
               work: {
-                  pattern: 'content/work/*.md',
-                  sortBy: 'date',
-                  reverse: true
+                  pattern: 'Source/content/work/*.md',
+              },*/
+              all: {
+                pattern: 'work/*.md'
+
               }
+
 
           }))
           .use(markdown())
