@@ -1,6 +1,7 @@
 ---
 title: Resume
 template: resume.hbt
+slug: resume
 ---
 
 <article>

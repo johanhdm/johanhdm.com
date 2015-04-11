@@ -68,30 +68,26 @@ gulp.task('forge', function(){
       })
       .pipe(
         gulpsmith()
-          .metadata({ site_name: "JohanHdM" })
+          //.metadata({ site_name: "JohanHdM" })
           .use(collections({
-            /*  pages: {
-                  pattern: 'content/pages/*.md'
-              },
-              resume: {
-                  pattern: 'content/resume/*.md'
-              },
-              posts: {
-                  pattern: 'content/posts/*.md',
-                  sortBy: 'date',
-                  reverse: true
-              },
-              work: {
-                  pattern: 'Source/content/work/*.md',
-              },*/
-              all: {
-                pattern: 'work/*.md'
+            pages: {
+                  pattern: 'pages/*.md'
+            },
+            blog: {
+                pattern: 'posts/*.md',
+                sortBy: 'date',
+                reverse: true
+            },
+            work: {
+                pattern: 'work/*.md',
+            },
+            all : {
+              pattern: '**/*.md',
 
-              }
-
-
+            }
           }))
           .use(markdown())
+          .use(permalinks({ pattern : ':collections/:slug' }))
           .use(templates({
                 "engine" : "handlebars",
                 "directory" : "Source/templates",
@@ -101,7 +97,8 @@ gulp.task('forge', function(){
 
                 }
               }))
-//          .use(permalinks(':collection/:title'))
+
+
       )
       .pipe(gulp.dest(config.dest.html));
 });

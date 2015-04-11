@@ -14,7 +14,7 @@
       <h1>{{{this.title}}}</h1>
     </header>
     <p>{{{this.intro}}}</p>
-    <p><a href="#">Read more</a></p>
+    <p>{{{this.path}}}<a href="/{{this.path}}">Read more</a></p>
   </article>
   {{/each}}
 </main>

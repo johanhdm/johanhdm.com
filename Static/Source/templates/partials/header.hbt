@@ -21,10 +21,10 @@
       <div class="menu"  >
         <ul class="nav navbar-nav">
           <li>
-            <a href="item">HOME</a>
+            <a href="/">HOME</a>
           </li>
           <li>
-            <a href="item">WORK</a>
+            <a href="/work">WORK</a>
           </li>
           <li>
             <a href="item">RESUME</a>

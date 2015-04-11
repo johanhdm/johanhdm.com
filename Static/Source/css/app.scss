@@ -62,17 +62,17 @@ article{
   }
 
   a{
-    color:#000;
-    background-color: #fff;
-    border: solid 3px #000;
+    color:#fff;
+    background-color: #000;
+    border: solid 3px #fff;
     padding: 6px 25px;
-    @include transition('background-color 3s');
+    @include transition('all 3s');
     text-decoration: none;
 
     &:hover{
-      color:#fff;
-      background-color: #000;
       @include transition('all 3s');
+      border: solid 3px #000;
+
     }
   }
 
@@ -99,7 +99,7 @@ footer{
   color: #fff;
   min-height: 200px;
   article{
-    margin-bottom: 0;
+    margin: 100px auto;
     header{
       border-bottom: solid 3px #fff;
     }
@@ -113,6 +113,12 @@ h1{
   line-height: 25px;
   font-family: 'AvenirBookOblique';
   margin: 25px 0;
+
+  em{
+    text-transform: none;
+    font-family: 'AvenirBook';
+    font-style:normal;
+  }
 }
 
 h2{

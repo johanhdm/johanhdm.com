@@ -1,6 +1,7 @@
 ---
-title: 'Lorem ipsum: Web site'
-subtitle: 'Case'
+title: 'Arctic Paper'
+subtitle: 'Case: web presence'
+slug: 'arctic-paper-web-site'
 template: case.hbt
 intro: Last time I saw this site was in 2006 and it was gorgeous. Tables and all. And here I was, at my new job being confronted with my old sins.
 ---
