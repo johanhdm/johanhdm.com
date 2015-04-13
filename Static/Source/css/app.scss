@@ -2,7 +2,7 @@
 @import "bootstrap";
 
 $width: 520px;
-$menu-height: 160px;
+$menu-height: 280px;
 
 //@import "includes/carousel";
 @import "includes/mixins";
@@ -21,16 +21,9 @@ body{
 
 
   &.menuOpen{
-
-    > main{
-      @include translate(0,$menu-height);
-      @include transition('all .3s');
-
-    }
-
     nav{
-      @include transition('all .3s');
-      @include translate(0,0);
+      margin: 0 0 180px;
+      @include transition('margin .3s');
     }
   }
 }
@@ -38,9 +31,6 @@ body{
 .container{
   max-width: $width;
   margin: 40px auto 0 auto;
-
-  @include translate(0,0);
-  @include transition('all 2s');
 
   padding: 0;
 
@@ -50,6 +40,17 @@ body{
 article{
 
   margin-bottom: 90px;
+
+  .head{
+    max-width: 800px;
+    width: 100%;
+    margin: 130px auto 25px;
+
+    img{
+      width: 100%;
+    }
+  }
+
   p{
     padding: 0 30px;
     &.center{
@@ -66,16 +67,18 @@ article{
   }
 
   a{
-    color:#fff;
-    background-color: #000;
+    color:#000;
+    background-color: #fff;
     border: solid 3px #fff;
     padding: 6px 25px;
-    @include transition('all 3s');
+
+    @include transition('background-color 0.5s ease-out');
     text-decoration: none;
 
     &:hover{
-      @include transition('all 3s');
-      border: solid 3px #000;
+      @include transition('background-color 0.5s ease');
+      background-color: #000;
+      color:#fff;
 
     }
   }
@@ -114,7 +117,7 @@ h1{
   text-transform: uppercase;
   text-align: center;
   font-size: 29px;
-  line-height: 25px;
+  line-height: 30px;
   font-family: 'AvenirBookOblique';
   font-weight: normal;
   margin: 25px 0;
@@ -156,19 +159,32 @@ address{
 }
 
 nav{
-  //position: absolute;
-  top: 0px;
   width:100%;
   transform-origin: 0px 0px 0px;
-  @include translate(0,-$menu-height);
-  transition: all .3s;
+  margin: -$menu-height + 5px 0 140px 0;
+  transition: margin .3s;
 
+  .triangle{
+    stroke:#fff;
+    stroke-width:1.5;
+    fill: transparent;
+  }
 
+  .menu-button{
+    width: 30px;
+    margin: 0 auto;
+    position:relative;
+    top:120px;
+    text-align: center;
+    color:#fff;
+    cursor:pointer;
+
+  }
 
   .menu{
     background-color:#000;
     display:block;
-    height: $menu-height - 15px;
+    height: $menu-height - 20px;
     position: relative;
     z-index: 1;
     padding: 20px 0 0;
@@ -182,10 +198,17 @@ nav{
       font-size: 29px;
 
       li{
+        margin: 20px 0;
         a{
-          background-color: #FFF;
-          color: #000;
+          color: #FFF;
           text-decoration: none;
+          padding: 6px 12px;
+
+          &:hover{
+            color: #000;
+            background-color:#FFF;
+
+          }
         }
       }
 
@@ -202,27 +225,4 @@ nav{
     cursor:pointer;
   }
 
-  > a{
-    position:relative;
-    top: 135px;
-    > span, span:before{
-      cursor: pointer;
-      border-radius: 0px;
-      height: 2px;
-      width: 18px;
-      background-color: #fff;
-      position: relative;
-      margin:auto;
-      display: block;
-      content: '';
-
-      &:before {
-        top: -8px;
-        margin:auto;
-        left:-5px;
-        width: 28px;
-
-      }
-    }
-  }
 }

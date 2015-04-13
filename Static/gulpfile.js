@@ -99,7 +99,7 @@ gulp.task('forge', function(){
       .pipe(gulp.dest(config.dest.html));
 });
 
-gulp.task('js', ['copy-js'], function () {
+gulp.task('js', function () {
     return gulp.src(config.src.js)
         .pipe(plumber())
         .pipe(concat('app.min.js'))

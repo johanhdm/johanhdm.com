@@ -1,11 +1,11 @@
 {{> header}}
 <main role="main">
   <article>
-    <div style="max-width:1000px; width: 100%; margin:auto;min-height:600px;background-color:#edcedc">
+    <div style="width: 100%; margin:auto;min-height:600px;background-color:#edcedc" class="d3">
 
     </div>
     <header class="container">
-      <h1>{{{title}}}</h1>
+      <h1>Hallå hjärtat.</h1>
     </header>
     <div class="container">
       <p>{{{intro}}}</p>

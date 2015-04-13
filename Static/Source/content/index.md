@@ -1,6 +1,6 @@
 ---
 title: 'Johan Halvarsson de Maar - tech lead'
-template: page.hbt
+template: start.hbt
 intro: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tempus ex faucibus, pulvinar felis nec, sodales diam. Sed nulla sapien, ullamcorper ut nulla vel, mollis auctor est. Pellentesque nisl eros, viverra vitae ultrices id, varius vel est.
 description: 'Portfolio of Johan Halvarsson de Maar - technical lead and developer at CP+B'
 ---

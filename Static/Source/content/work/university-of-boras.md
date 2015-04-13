@@ -2,7 +2,7 @@
 title: 'University of Borås'
 subtitle: 'Case: web site'
 slug: 'university-of-boras-web-site'
-template: page.hbt
+template: case.hbt
 intro: The old site was quickly dying the painful death often seen where sites suffer from a chronic case of IBM WebSphere. The end was near.
 ---
 Suspendisse malesuada nulla tempus, consectetur neque in, laoreet massa. Maecenas porta scelerisque nibh id interdum. Morbi lobortis, nisi eget vehicula imperdiet, libero sem eleifend turpis, in tincidunt mauris nulla quis nisl. Aenean justo sapien, placerat eu ornare a, aliquet quis diam.

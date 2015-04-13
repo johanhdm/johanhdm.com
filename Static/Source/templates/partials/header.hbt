@@ -7,7 +7,7 @@
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>{{title}} | Johan Halvarsson de Maar</title>
+    <title>{{title}}</title>
     {{#if description}}
     <meta name="description" content="{{description}}">
     {{else}}
@@ -29,10 +29,10 @@
             <a href="/work">WORK</a>
           </li>
           <li>
-            <a href="item">RESUME</a>
+            <a href="/resume">RESUME</a>
           </li>
           <li>
-            <a href="item">BLOG</a>
+            <a href="/blog">BLOG</a>
           </li>
           <li>
             <a href="#about">ABOUT ME</a>
@@ -41,5 +41,10 @@
       </div>
       <div class="button" ng-click="toggleMenu()">
       </div>
-      <a href="#" ng-click="toggleMenu()"><span></span></a>
+      <div class="menu-button" href="#" ng-click="toggleMenu()">
+        Menu
+        <svg height="20" width="20">
+          <polygon points="2,2 10,11 18,2" class="triangle" />
+        </svg>
+      </div>
     </nav>
