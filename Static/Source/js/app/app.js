@@ -10,16 +10,26 @@ app.controller('MainController', ['$scope', function($scope){
 
   };
 
-  var svg = d3.select(".d3")
-    .append("svg");
+  console.log(document.width);
+  var width = 1280;
 
-  var t = textures.lines()
-    .thicker();
+  var svg = d3.select(".d3")
+    .append("svg")
+    .attr('width', width)
+    .attr('height', 600);
+
+
+  var t = textures.circles().lighter();
 
   svg.call(t);
 
-  svg.append("circle")
-    .style("fill", t.url());
-
+  svg.append('rect')
+    .attr('x', 0)
+    .attr('y', 0)
+    .attr('width', width)
+    .attr('height', 600)
+    .style({
+      "fill": t.url()
+    });
   //d3.select(".d3").style("background-color", "black");
 }]);

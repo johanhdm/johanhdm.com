@@ -1,7 +1,7 @@
 {{> header}}
 <main role="main">
   <article>
-    <div style="width: 100%; margin:auto;min-height:600px;background-color:#edcedc" class="d3">
+    <div class="d3">
 
     </div>
     <header class="container">

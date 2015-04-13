@@ -25,6 +25,11 @@ body{
       margin: 0 0 180px;
       @include transition('margin .3s');
     }
+
+    .d3{
+      margin: -120px auto 0;
+
+    }
   }
 }
 
@@ -35,6 +40,13 @@ body{
   padding: 0;
 
 
+}
+
+.d3{
+  width: 100%;
+  margin: -85px auto 0;
+  min-height: 600px;
+  overflow: hidden;
 }
 
 article{
@@ -70,7 +82,8 @@ article{
     color:#000;
     background-color: #fff;
     border: solid 3px #fff;
-    padding: 6px 25px;
+    padding: 4px 18px;
+    margin: 0 3px;
 
     @include transition('background-color 0.5s ease-out');
     text-decoration: none;
