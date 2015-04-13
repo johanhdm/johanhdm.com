@@ -80,10 +80,6 @@ gulp.task('forge', function(){
             },
             work: {
                 pattern: 'work/*.md',
-            },
-            all : {
-              pattern: '**/*.md',
-
             }
           }))
           .use(markdown())

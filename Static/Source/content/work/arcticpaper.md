@@ -16,4 +16,5 @@ Agency: **CP+B**
 My role: **Tech lead and architect**
 Launch: **February 2013**
 Technologies: **EPiServer 6 CMS, Composer 4**
+
 **[Visit site](http://www.arcticpaper.com)**

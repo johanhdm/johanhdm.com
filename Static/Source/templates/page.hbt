@@ -1,20 +1,27 @@
 {{> header}}
-<main role="main" class="container">
+<main role="main">
   <article>
-    <header>
+    <div style="max-width:1000px; width: 100%; margin:auto;min-height:600px;background-color:#edcedc">
+
+    </div>
+    <header class="container">
       <h1>{{{title}}}</h1>
     </header>
+    <div class="container">
       <p>{{{intro}}}</p>
       {{{contents}}}
+    </div>
   </article>
-  {{#each collections.all}}
+  {{#each collections.work}}
   <article>
-    <header>
+    <header class="container">
       <h3>{{{this.subtitle}}}</h3>
       <h1>{{{this.title}}}</h1>
     </header>
-    <p>{{{this.intro}}}</p>
-    <p>{{{this.path}}}<a href="/{{this.path}}">Read more</a></p>
+    <div class="container">
+      <p>{{this.intro}}</p>
+      <p class="center"><a href="/{{this.path}}">Read more</a></p>
+    </div>
   </article>
   {{/each}}
 </main>
