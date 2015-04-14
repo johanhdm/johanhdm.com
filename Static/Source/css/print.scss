@@ -1,10 +1,10 @@
 @media print{
-  nav {
+  nav, footer {
     display: none;
 
   }
-.break-after{
-  page-break-after: always;
-}
+  .break-after{
+    page-break-after: always;
+  }
 
 }

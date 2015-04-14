@@ -4,7 +4,7 @@ subtitle: 'Case: web presence'
 slug: 'arctic-paper-web-site'
 template: case.hbt
 intro: Last time I saw this site was in 2006 and it was gorgeous. Tables and all. And here I was, at my new job being confronted with my old sins.
-image: 'arcticpaper.preview.png'
+image: 'arcticpaper.jpg'
 ---
 So it was time to upgrade the site. The tables had to go. EPiServer 4.52 was not in fashion anymore. Flash didn't work on iPhones. What to do?
 
@@ -21,4 +21,6 @@ Launch: **February 2013**
 
 Technologies: **EPiServer 6 CMS, Composer 4**
 
+<p class="center">
 **[Visit site](http://www.arcticpaper.com)**
+</p>

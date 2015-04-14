@@ -4,6 +4,7 @@ app.controller('MainController', ['$scope', function($scope){
   'use strict';
 
   $scope.menuOpen = false;
+  $scope.hideFullHeadImage = false;
 
   $scope.toggleMenu = function(){
     $scope.menuOpen = !$scope.menuOpen;

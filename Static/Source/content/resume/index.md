@@ -7,7 +7,7 @@ slug: resume
 <article>
   <header>
     <h2>CURRICULUM VITAE</h2>
-    <h1>JOHAN HALVARSSON DE MAAR</h1>
+    <h1>Johan Halvarsson <em>de</em> Maar</h1>
     <address>
       johanhdm@gmail.com  |  + 46 709 214 589
     </address>
