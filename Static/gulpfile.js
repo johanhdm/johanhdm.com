@@ -16,6 +16,7 @@ var gulp = require('gulp')
     , markdown = require('metalsmith-markdown')
     , templates = require('metalsmith-templates')
     , collections = require('metalsmith-collections')
+    , sitemap = require('metalsmith-sitemap')
     , assign = require('lodash.assign');
 
 gulp.task('serve', serve('Dist'));
@@ -93,7 +94,17 @@ gulp.task('forge', function(){
 
                 }
               }))
-
+          .use(sitemap({
+              ignoreFiles: [/test.xml/], // Matched files will be ignored
+              output: 'sitemap.xml', // The location where the final sitemap should be placed
+              //urlProperty: 'seo.canonical', // Key for URL property
+              hostname: 'http://www.johanhdm.com', // hostname to use for URL, if needed
+              modifiedProperty: 'modified', // Key for last modified property
+              defaults: { // You can provide default values for any property in here
+                  priority: 0.5,
+                  changefreq: 'daily'
+              }
+          }))
 
       )
       .pipe(gulp.dest(config.dest.html));
