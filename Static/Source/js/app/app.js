@@ -12,11 +12,11 @@ app.controller('MainController', ['$scope', function($scope){
   };
 
   console.log(document.width);
-  var width = 1280;
+  var width = document.width;
 
   var svg = d3.select(".d3")
     .append("svg")
-    .attr('width', width)
+    .attr('width', width * 2)
     .attr('height', 600);
 
 

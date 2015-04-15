@@ -2,8 +2,9 @@
 <main role="main">
   <article>
     <div class="d3">
-
+      <div>Hallå hjärtat</div>
     </div>
+    <!--
     <header class="container">
       <h1>Hallå hjärtat.</h1>
     </header>
@@ -11,7 +12,7 @@
       <p>{{{intro}}}</p>
       {{{contents}}}
     </div>
-  </article>
+  </article>-->
   {{#each collections.work}}
   <article>
     <header class="container">
