@@ -12,15 +12,15 @@ app.controller('MainController', ['$scope', function($scope){
   };
 
   console.log(document.width);
-  var width = document.width;
+  var width = document.width *2;
 
   var svg = d3.select(".d3")
     .append("svg")
-    .attr('width', width * 2)
+    .attr('width', width)
     .attr('height', 600);
 
 
-  var t = textures.circles().lighter();
+  var t = textures.lines().lighter();
 
   svg.call(t);
 

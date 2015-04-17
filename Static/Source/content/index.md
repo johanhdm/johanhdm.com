@@ -1,10 +1,9 @@
 ---
 title: 'Johan Halvarsson de Maar - tech lead'
 template: start.hbt
-intro: 'Hello dear. Nice to see you here.'
 description: 'Portfolio of Johan Halvarsson de Maar - technical lead and developer at CP+B'
 ---
 
-My name is Johan Halvarsson de Maar. 
+Hello dear, nice to see you. My name is Johan Halvarsson de Maar and this is where I keep notes of things I have made or been part of making.
 
-Vivamus sagittis, sem et ultrices convallis, augue ligula sollicitudin neque, non gravida dui augue vel purus. In hac habitasse platea dictumst. Fusce mauris orci, feugiat in nisi id, malesuada elementum nunc. Donec eget eleifend urna, quis pellentesque dui.
+Feel like getting in contact with me? Check out the [About](#about) section on where to find me.

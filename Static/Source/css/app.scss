@@ -10,6 +10,7 @@ $menu-height: 280px;
 
 html{
   -webkit-font-smoothing: subpixel-antialiased;
+  height:100%;
 }
 
 body{
@@ -18,7 +19,7 @@ body{
   font-size: 11px;
   line-height: 25px;
   font-family: 'AvenirBook';
-
+  height:inherit;
 
   &.menuOpen{
     nav{
@@ -30,6 +31,12 @@ body{
       margin: -120px auto 0;
 
     }
+
+    > .triangle{
+      @include rotate(180);
+
+    }
+
   }
 }
 
@@ -47,6 +54,14 @@ body{
   margin: -85px auto 0;
   min-height: 600px;
   overflow: hidden;
+  position:relative;
+
+  h1{
+    position: absolute;
+    width:50%;
+    margin:auto;
+    text-align:center;
+  }
 }
 
 article{
@@ -90,12 +105,18 @@ article{
       text-align:center;
     }
 
+    strong{
+      font-family: 'AvenirBookOblique';
+      font-weight: 600;
+    }
+
     em{
       &:after{
         content:' - ';
       }
 
     }
+
 
   }
 
@@ -139,6 +160,7 @@ footer{
   background-color: #000;
   color: #fff;
   min-height: 200px;
+  height:inherit;
   article{
     margin: 100px auto;
     header{
@@ -220,7 +242,8 @@ nav{
   .triangle{
     stroke:#fff;
     stroke-width:1.5;
-    fill: transparent;
+    fill: #fff;
+    @include rotate(0);
   }
 
   .menu-button{
