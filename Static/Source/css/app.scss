@@ -66,15 +66,16 @@ body{
 
 article{
 
-  margin-bottom: 90px;
+  margin-bottom: 120px;
 
   .head{
     max-width: 800px;
-    width: 100%;
+    width: calc(100% - 60px);
     margin: 130px auto 0;
     height: 250px;
     border-bottom: 1px solid #000;
     overflow:hidden;
+    padding:0 30px;
     @include transition('height 1s');
 
     &.fullHeight{

@@ -5,7 +5,11 @@
     <div class="head" ng-class="{ 'fullHeight' : hideFullHeadImage }">
       <img src="/images/content/{{image}}"  ></img>
     </div>
-    <div class="expandImageButton" ng-click="hideFullHeadImage = !hideFullHeadImage">X</div>
+    <div class="expandImageButton" ng-click="hideFullHeadImage = !hideFullHeadImage">
+      <svg height="40" width="40">
+        <polygon points="0,0 20,20 40,0" class="triangle" />
+      </svg>
+    </div>
 
     {{/if}}
     <!--<svg

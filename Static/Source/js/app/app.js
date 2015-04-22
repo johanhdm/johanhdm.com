@@ -20,7 +20,7 @@ app.controller('MainController', ['$scope', function($scope){
     .attr('height', 600);
 
 
-  var t = textures.lines().lighter();
+  var t = textures.lines().thicker();
 
   svg.call(t);
 
