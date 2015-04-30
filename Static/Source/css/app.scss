@@ -113,17 +113,29 @@ article{
     width: calc(100% - 60px);
     margin: 130px auto 0;
     height: 250px;
-    border-bottom: 1px solid #000;
+    border-bottom: 20px solid #000;
     overflow:hidden;
-    padding:0 30px;
+    padding:20px;
+    border-radius: 15px 15px 0 0;
+    background-color: #000;
+
     @include transition('height 1s');
 
     &.fullHeight{
       height: initial;
       overflow:none;
-      border-bottom: 0 solid #000;
+      //border-bottom: 0 solid #000;
       @include transition('height 1s');
 
+
+    }
+
+    @media (min-width:800px){
+
+        .head{
+          padding:10px;
+          border-radius: 7px 7px 0 0;
+        }
 
     }
 
