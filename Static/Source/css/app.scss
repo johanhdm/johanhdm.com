@@ -38,6 +38,12 @@ body{
     }
 
   }
+
+  .line{
+    fill: #fff;
+    stroke: #fff;
+    stroke-width:1;
+  }
 }
 
 .container{
@@ -62,6 +68,14 @@ body{
     margin:auto;
     text-align:center;
   }
+}
+
+.hero-full{
+  width:100%;
+  min-height: calc(100% + 80px);
+  margin-top:-140px;
+  background-color: rgba(255, 244, 30, 0.65);
+
 }
 
 .campaign-hero{
@@ -113,10 +127,10 @@ article{
     width: calc(100% - 60px);
     margin: 130px auto 0;
     height: 250px;
-    border-bottom: 20px solid #000;
+    border-bottom: 10px solid #000;
     overflow:hidden;
-    padding:20px;
-    border-radius: 15px 15px 0 0;
+    padding:10px;
+    border-radius: 7px 7px 0 0;
     background-color: #000;
 
     @include transition('height 1s');
@@ -130,10 +144,10 @@ article{
 
     }
 
-    @media (min-width:800px){
+    @media (max-width:800px){
 
         .head{
-          padding:10px;
+          padding:0px;
           border-radius: 7px 7px 0 0;
         }
 
@@ -148,6 +162,11 @@ article{
     width:50px;
     margin:auto;
     text-align:center;
+
+  }
+
+  .close{
+
 
   }
 
@@ -297,6 +316,8 @@ nav{
     stroke-width:1.5;
     fill: #fff;
     @include rotate(0);
+    cursor:pointer;
+
   }
 
   .menu-button{

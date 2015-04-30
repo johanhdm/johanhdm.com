@@ -1,10 +1,14 @@
 {{> header}}
-<div class="campaign-hero" ng-show="agency" ng-controller="CampaignController" >
+<!-- div class="campaign-hero" ng-show="agency" ng-controller="CampaignController" >
   <h1 ng-bind="agency.title"></h1>
   <h2 ng-bind="agency.text"></h2>
   <p class="center"><a href="#">Contact me</a></p>
 
-</div>
+</div -->
+<!--<div class="hero-full" >
+  <img src="/images/content/pocketoperator.jpg" />
+</div-->
+
 <main role="main">
     <article>
 <!--    <div class="d3">

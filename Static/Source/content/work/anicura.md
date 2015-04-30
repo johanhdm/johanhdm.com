@@ -17,6 +17,8 @@ The sites needed to be flexible both in terms of reusable components and in resp
 
 AngularJS was selected as JavaScript framework and structural capital was built on Google Custom Search API to enhance the site search.
 
+- - -
+
 Agency: **CP+B**
 
 My role: **Tech lead**
