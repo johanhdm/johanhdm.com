@@ -80,7 +80,10 @@ gulp.task('forge', function(){
                 reverse: true
             },
             work: {
+                sortBy: 'publishDate',
                 pattern: 'work/*.md',
+                reverse: true
+                
             }
           }))
           .use(markdown())

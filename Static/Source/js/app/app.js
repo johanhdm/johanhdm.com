@@ -34,3 +34,23 @@ app.controller('MainController', ['$scope', function($scope){
     });
   //d3.select(".d3").style("background-color", "black");
 }]);
+
+app.controller('CampaignController', ['$scope', '$http', function($scope, $http){
+  $scope.agency = null;
+
+  var promise = $http.get('http://who-dis.johanhdm.com');
+
+  promise.success(function(data, status, headers, config) {
+    // this callback will be called asynchronously
+    // when the response is available
+    console.log(data);
+    console.log(status);
+    if (status == 200){
+      $scope.agency = data;
+    }
+
+
+  });
+
+
+}]);

@@ -1,9 +1,15 @@
 {{> header}}
+<div class="campaign-hero" ng-show="agency" ng-controller="CampaignController" >
+  <h1 ng-bind="agency.title"></h1>
+  <h2 ng-bind="agency.text"></h2>
+  <p class="center"><a href="#">Contact me</a></p>
+
+</div>
 <main role="main">
-  <article>
-    <div class="d3">
+    <article>
+<!--    <div class="d3">
       <h1>Hallå hjärtat</h1>
-    </div>
+    </div>-->
     <header class="container">
       <h1>Hallå hjärtat.</h1>
     </header>
@@ -21,7 +27,11 @@
       <h1>{{{this.title}}}</h1>
     </header>
     <div class="container">
+      {{#if this.intro}}
       <p>{{this.intro}}</p>
+      {{else}}
+      <p>{{this.description}}</p>
+      {{/if}}
       <p class="center"><a href="/{{this.path}}">Read more</a></p>
     </div>
   </article>

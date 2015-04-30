@@ -16,7 +16,11 @@
     <h1>{{{this.title}}}</h1>
   </header>
   <div class="container">
+    {{#if this.intro}}
     <p>{{this.intro}}</p>
+    {{else}}
+    <p>{{this.description}}</p>
+    {{/if}}
     <p class="center"><a href="/{{this.path}}">Read more</a></p>
   </div>
 </article>
