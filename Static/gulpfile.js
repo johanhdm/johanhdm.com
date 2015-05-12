@@ -17,7 +17,8 @@ var gulp = require('gulp')
     , templates = require('metalsmith-templates')
     , collections = require('metalsmith-collections')
     , sitemap = require('metalsmith-sitemap')
-    , assign = require('lodash.assign');
+    , assign = require('lodash.assign')
+    , cachebust = require('gulp-cachebust');
 
 gulp.task('serve', serve('Dist'));
 
@@ -83,7 +84,7 @@ gulp.task('forge', function(){
                 sortBy: 'publishDate',
                 pattern: 'work/*.md',
                 reverse: true
-                
+
             }
           }))
           .use(markdown())
